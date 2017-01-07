@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+
+  <Commands package="guidImage_Converter_ExtensionPkg">
+    <Menus>
+      <Menu guid="guidTopLevelMenuCmdSet" id="SubMenu" priority="0x0100" type="Menu">
+        <Parent guid="guidDynamicMenuDevelopmentCmdSetPart2" id="menuidQueryStatusGroup"/>
+        <Strings>
+          <ToolTipText>Some basic image manipulation</ToolTipText>
+          <ButtonText>Image Tools</ButtonText>
+          <CommandName>Image Tools</CommandName>
+        </Strings>
+      </Menu>
+    </Menus>
+    <Groups>
+
+      <!-- http://msdn.microsoft.com/en-us/library/cc807687.aspx -->
+      <Group guid="guidDynamicMenuDevelopmentCmdSetPart2" id="menuidQueryStatusGroup" priority="0x0601">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_ITEMNODE" />
+      </Group>
+
+      <Group guid="guidCreateThumbnail" id="menuidThumbnailGroup" priority="0x0601">
+        <Annotation>
+          <AppInfo>test</AppInfo>
+          <Documentation>http://www.nu.nl</Documentation>
+        </Annotation>
+        <Parent guid="guidDynamicMenuDevelopmentCmdSetPart2" id="menuidQueryStatusGroup" />
+      </Group>
+      
+      <Group guid="guidTopLevelMenuCmdSet" id="SubMenuGroup" priority="0x0000">
+        <Parent guid="guidTopLevelMenuCmdSet" id="SubMenu"/>
+      </Group>
+      
+    </Groups>
+    
+    <!--Buttons section. -->
+    <!--This section defines the elements the user can interact with, like a menu command or a button 
+        or combo box in a toolbar. -->
+    <Buttons>
+<!--
+      <Button guid="guidTopLevelMenuCmdSet" id="cmdidTestSubCommand" priority="0x0000" type="Button">
+        <Parent guid="guidTopLevelMenuCmdSet" id="SubMenuGroup" />
+        <Icon guid="guidImages" id="bmpPic1" />
+        <Strings>
+          <CommandName>cmdidTestSubCommand</CommandName>
+          <ButtonText>Test Sub Command</ButtonText>
+        </Strings>
+      </Button>-->
+
+      <!--
+      <Button guid="guidDynamicMenuDevelopmentCmdSetPart2" id="cmdImageOptimizerQueryStatus" priority="0x0600" type="Button">
+        <Parent guid="guidDynamicMenuDevelopmentCmdSetPart2" id="menuidQueryStatusGroup" />
+        <Icon guid="guidImages" id="bmpPic1" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <CommandName>cmdidQueryStatus</CommandName>
+          <ButtonText>Image Tools 2</ButtonText>
+        </Strings>
+      </Button>-->
+
+      <Button guid="guidAdvancedResize" id="cmdAdvancedResize" priority="0x0600" type="Button">
+        <Parent guid="guidTopLevelMenuCmdSet" id="SubMenuGroup" />
+        <Icon guid="guidImages" id="bmpResize" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <CommandName>cmdAdvancedResize</CommandName>
+          <ButtonText>Resize</ButtonText>
+        </Strings>
+      </Button>
+      
+      <Button guid="guidCreateThumbnail" id="cmdCreateThumbnail" priority="0x0600" type="Button">
+        <Parent guid="guidTopLevelMenuCmdSet" id="SubMenuGroup" />
+        <Icon guid="guidImages" id="bmpPic1" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ToolTipText>Creates a thumbnail with size 100x100</ToolTipText>
+          <CommandName>cmdCreateThumbnail</CommandName>
+          <ButtonText>Create thumbnail</ButtonText>
+        </Strings>
+      </Button>
+<!--TODO: 
+      <Button guid="guidResize" id="cmdResize" priority="0x0600" type="Button">
+        <Parent guid="guidTopLevelMenuCmdSet" id="SubMenuGroup" />
+        <Icon guid="guidImages" id="bmpPic1" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ToolTipText>Creates a thumbnail with size 100x100</ToolTipText>
+          <CommandName>cmdResize</CommandName>
+          <ButtonText>Resize</ButtonText>
+        </Strings>
+      </Button>
+      -->
+      <Button guid="guidRecompressImage" id="cmdRecompressImg" priority="0x0600" type="Button">
+        <Parent guid="guidTopLevelMenuCmdSet" id="SubMenuGroup" />
+        <Icon guid="guidImages" id="bmpLightning" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <CommandName>cmdRecompressImg</CommandName>
+          <ButtonText>Re-encode image</ButtonText>
+        </Strings>
+      </Button>
+      
+
+
+      <Button guid="guidRotateLeft" id="cmdRotateLeft" priority="0x0600" type="Button">
+        <Parent guid="guidTopLevelMenuCmdSet" id="SubMenuGroup" />
+        <Icon guid="guidImages" id="bmpRotateLeft" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <CommandName>cmdRotateLeft</CommandName>
+          <ButtonText>Rotate 90 degrees counter clockwise</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidRotateRight" id="cmdRotateRight" priority="0x0600" type="Button">
+        <Parent guid="guidTopLevelMenuCmdSet" id="SubMenuGroup" />
+        <Icon guid="guidImages" id="bmpRotateRight" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <CommandName>cmdRotateRight</CommandName>
+          <ButtonText>Rotate 90 degrees clockwise</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidConvertToJpeg" id="cmdConvertToJpeg" priority="0x0600" type="Button">
+        <Parent guid="guidTopLevelMenuCmdSet" id="SubMenuGroup" />
+        <Icon guid="guidImages" id="bmpJPG" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <CommandName>cmdConvertToJpeg</CommandName>
+          <ButtonText>Convert to JPEG</ButtonText>
+        </Strings>
+      </Button>
+      
+      <Button guid="guidConvertToPng" id="cmdConvertToPng" priority="0x0600" type="Button">
+        <Parent guid="guidTopLevelMenuCmdSet" id="SubMenuGroup" />
+        <Icon guid="guidImages" id="bmpPNG" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <CommandName>cmdConvertToPng</CommandName>
+          <ButtonText>Convert to PNG</ButtonText>
+        </Strings>
+      </Button>
+      
+      <Button guid="guidConvertToGif" id="cmdConvertToGif" priority="0x0600" type="Button">
+        <Parent guid="guidTopLevelMenuCmdSet" id="SubMenuGroup" />
+        <Icon guid="guidImages" id="bmpGIF" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <CommandName>cmdConvertToGif</CommandName>
+          <ButtonText>Convert to GIF</ButtonText>
+        </Strings>
+      </Button>
+     
+    </Buttons>
+   
+    <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
+    <Bitmaps>
+      <Bitmap guid="guidImages" href="Resources\icon_image.png" usedList="bmpPic1,bmpZip,bmpResize,bmpRotateRight,bmpRotateLeft,bmpInfo,bmpLightning,bmpGrayscale,bmpPNG,bmpJPG,bmpGIF,bmpBMP"/>
+    </Bitmaps>
+ 
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="guidTopLevelMenuCmdSet" value="{5cf7eeef-223e-4b30-9104-3a0826718d70}">
+      <IDSymbol name="SubMenu" value="0x1100"/>
+      <IDSymbol name="SubMenuGroup" value="0x1150"/>
+      <IDSymbol name="cmdidTestSubCommand" value="0x0105"/>
+    </GuidSymbol>
+    
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidImage_Converter_ExtensionPkg" value="{0f71e5c4-2790-4a69-90a4-8e0145cadc8c}" />
+    
+    <!-- This is the guid used to group the menu commands together
+    <GuidSymbol name="guidImage_Converter_ExtensionCmdSet" value="{5cf7eeef-223e-4b30-9104-3a0826718d70}">
+      <IDSymbol name="MyMenuGroup" value="0x1020" />
+      <IDSymbol name="cmdidImageConverter" value="0x0100" />
+    </GuidSymbol> -->
+
+    <GuidSymbol name="guidDynamicMenuDevelopmentCmdSetPart2" value="{5cf7eeef-223e-4b30-9104-3a0826718d71}">
+      <IDSymbol name="menuidQueryStatusGroup" value="0x1020" />
+      <IDSymbol name="cmdImageOptimizerQueryStatus" value="0x100" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidCreateThumbnail" value="{5cf7eeef-223e-4b30-9104-3a0826718d71}">
+      <IDSymbol name="menuidThumbnailGroup" value="0x1011" />
+      <IDSymbol name="cmdCreateThumbnail" value="0x101" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidRecompressImage" value="{5cf7eeef-223e-4b30-9104-3a0826718d72}">
+      <IDSymbol name="menuidThumbnailGroup" value="0x1012" />
+      <IDSymbol name="cmdRecompressImg" value="0x102" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidConvertToJpeg" value="{5cf7eeef-223e-4b30-9104-3a0826718d73}">
+      <IDSymbol name="menuidThumbnailGroup" value="0x1013" />
+      <IDSymbol name="cmdConvertToJpeg" value="0x103" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidRotateLeft" value="{5cf7eeef-223e-4b30-9104-3a0826718d74}">
+      <IDSymbol name="menuidThumbnailGroup" value="0x1013" />
+      <IDSymbol name="cmdRotateLeft" value="0x104" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidRotateRight" value="{5cf7eeef-223e-4b30-9104-3a0826718d75}">
+      <IDSymbol name="menuidThumbnailGroup" value="0x1013" />
+      <IDSymbol name="cmdRotateRight" value="0x105" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidAdvancedResize" value="{5cf7eeef-223e-4b30-9104-3a0826718d76}">
+      <IDSymbol name="menuidThumbnailGroup" value="0x1013" />
+      <IDSymbol name="cmdAdvancedResize" value="0x106" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidConvertToPng" value="{5cf7eeef-223e-4b30-9104-3a0826718d77}">
+      <IDSymbol name="menuidThumbnailGroup" value="0x1013" />
+      <IDSymbol name="cmdConvertToPng" value="0x107" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidConvertToGif" value="{5cf7eeef-223e-4b30-9104-3a0826718d78}">
+      <IDSymbol name="menuidThumbnailGroup" value="0x1013" />
+      <IDSymbol name="cmdConvertToGif" value="0x108" />
+    </GuidSymbol>
+    
+    <GuidSymbol name="guidImages" value="{0d67587a-75cd-4476-b88e-a421ea432ad1}" >
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpZip" value="2" />
+      <IDSymbol name="bmpResize" value="3" />
+      <IDSymbol name="bmpRotateRight" value="4" />
+      <IDSymbol name="bmpRotateLeft" value="5" />
+      <IDSymbol name="bmpInfo" value="6" />
+      <IDSymbol name="bmpLightning" value="7" />
+      <IDSymbol name="bmpGrayscale" value="8" />
+      <IDSymbol name="bmpPNG" value="9" />
+      <IDSymbol name="bmpJPG" value="10" />
+      <IDSymbol name="bmpGIF" value="11" />
+      <IDSymbol name="bmpBMP" value="12" />
+    </GuidSymbol>
+  </Symbols>
+
+</CommandTable>

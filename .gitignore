@@ -3,3 +3,7 @@
 ################################################################################
 
 /Image Converter Extension/bin/Debug
+/Image Converter Extension/bin/Release
+/Image Converter Extension/bin/Release
+/Image Converter Extension/obj
+/packages/Microsoft.VSSDK.BuildTools.15.0.25929-RC2

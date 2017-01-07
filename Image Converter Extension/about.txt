@@ -1,0 +1,2 @@
+Tags: resize image convert picture thumb conversion
+Description: Adds useful image resizing features to Visual Studio for web developers. Also capable to convert, compress, thumbnail images just by right clicking on a image in your solution explorer. It's easy to rotate images and recompress images with a lower quality level. It can save you a lot of time opening your paint application. So hope your having fun using it, let me know if something is missing. Than I am glad to see if I can add it. Enjoy!
